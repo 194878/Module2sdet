@@ -16,6 +16,8 @@ try {
     browserSwitching.YahooSearch();
     Console.WriteLine("Yahoo Search Test - Passed");
     browserSwitching.GoSwitch();
+     browserSwitching.GoogleSearchFind();
+ Console.WriteLine("Google Search Test - Passed");
     browserSwitching.DiwaliSearch();
     Console.WriteLine("Diwali test - passed");
     browserSwitching.RefreshTest();
