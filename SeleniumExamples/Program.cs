@@ -4,6 +4,53 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumExamples;
 
+List<string> drivers = new List<string>();
+drivers.Add("Edge");
+drivers.Add("Chrome");
+foreach (var d in drivers)
+{
+    AmazonTest az= new AmazonTest();    
+    switch (d)
+    {
+        case "Edge":
+            az.InitializeEdgeDriver();
+            break;
+        case "Chrome":
+            az.InitializeChromeDriver();
+            break;
+
+
+    }
+    try
+    {
+        //az.TitleTest();
+        //Thread.Sleep(7000);
+        //az.LogoClickTest();
+        //az.SearchProductTest();
+        //az.ReloadHomePage();
+        //az.ClickTodaysDealsTest();
+        //az.SignInAccountListTest();
+        az.SearchAndFilterProductByBrand();
+        az.SortBySelectTest();
+
+
+    }
+    catch (AssertionException)
+    {
+        Console.WriteLine("fail");
+
+    }
+    catch (NoSuchElementException nse)
+    {
+        Console.WriteLine(nse.Message);
+    }
+    az.Destruct();
+}
+
+
+
+/*
+
 GHPTests gHPTests = new GHPTests();
 List<string> drivers = new List<string>();
 drivers.Add("Edge");
@@ -45,7 +92,7 @@ foreach (var d in drivers)
     }
 
 }*/
-
+/*
     try
     {
        // gHPTests.TitleTest();
@@ -64,3 +111,4 @@ foreach (var d in drivers)
     }
 
     gHPTests.Destruct();
+*/

@@ -3,17 +3,12 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumNunitExamples
 {
-    public class Tests
+   class UnitTest1:CoreCodes
     {
-        IWebDriver driver = new ChromeDriver();
-        [SetUp]
-        public void Setup()
-        {
-            driver.Url = "https://www.google.com";
-        }
-
+       IWebDriver driver = new ChromeDriver();
+     
         [Test]
-        public void CheckForTitle()
+       public void CheckForTitle()
         {
             Thread.Sleep(2000);
             string title= driver.Title;
@@ -21,7 +16,7 @@ namespace SeleniumNunitExamples
 
            
         }
-        [TearDown]
+      
         public void Close() 
         {
             driver.Close();

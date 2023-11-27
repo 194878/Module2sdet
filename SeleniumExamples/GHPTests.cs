@@ -19,6 +19,7 @@ namespace SeleniumExamples
 
             driver.Url = "https://www.google.com";
 
+
         }
         public void InitializeChromeDriver()
         {
